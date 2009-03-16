@@ -31,7 +31,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * @author Patrick Schoenbach - Initial API and implementation
- * @version $Revision: 1.25.2.1 $
+ * @version $Revision: 1.25.2.2 $
  */
 public class WorkflowContentHandler extends DefaultHandler {
 
@@ -234,11 +234,9 @@ public class WorkflowContentHandler extends DefaultHandler {
 				char ch = document.getChar(i);
 				if (ch == '"') {
 					doubleQuotes++;
-					continue;
 				}
 				else if (ch == '\'') {
 					singleQuotes++;
-					continue;
 				}
 
 				if (ch == stopChar && (singleQuotes % 2 == 0) && (doubleQuotes % 2 == 0)) {
